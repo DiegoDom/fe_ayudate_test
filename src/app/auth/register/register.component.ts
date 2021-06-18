@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -58,6 +59,11 @@ export class RegisterComponent implements OnInit {
     this.authService.register({...this.form.value})
     .subscribe((resp: any) => {
       localStorage.setItem('user_email', resp['data']['email']);
+      Swal.fire(
+        'Usuario creado con éxito!',
+        'Inicia sesión!.',
+        'success'
+      );
       this.router.navigate (['/login']);
       this.loading = false;
     }, (err) => {

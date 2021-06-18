@@ -125,6 +125,17 @@ export class AuthService {
     return this.http.delete(`${ this.baseUrl }/users/${ id }`, httpOptions);
   }
 
+  changePassword(payload: any) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('jwt'),
+      }),
+    };
+
+    return this.http.post(`${ this.baseUrl }/users/change_password`, {...payload }, httpOptions);
+  }
+
     /* ERRORES */
   obtener_mensajes_error(err: any) {
 

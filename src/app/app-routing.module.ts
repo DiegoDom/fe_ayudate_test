@@ -8,6 +8,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { LoggedGuard } from './guards/logged.guard';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './components/users/index/index.component';
+import { ChangePasswordComponent } from './components/users/change-password/change-password.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
       {
         path: 'users/edit/:id',
         component: AddUserComponent,
+      },
+      {
+        path: 'users/change_password',
+        component: ChangePasswordComponent,
       },
       {
         path: 'profile/add',

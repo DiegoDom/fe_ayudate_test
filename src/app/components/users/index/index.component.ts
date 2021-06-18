@@ -33,7 +33,6 @@ export class IndexComponent implements OnInit {
   }
 
   deleteUser(id: any, name: string) {
-    console.log(id, name);
 
     Swal.fire({
       title: 'Estas seguro de eliminar el usuario?',

@@ -15,6 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddUserComponent } from './components/users/add-user/add-user.component';
 import { AddProfileComponent } from './components/add-profile/add-profile.component';
 import { IndexComponent } from './components/users/index/index.component';
+import { ChangePasswordComponent } from './components/users/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { IndexComponent } from './components/users/index/index.component';
     NavbarComponent,
     AddUserComponent,
     AddProfileComponent,
-    IndexComponent
+    IndexComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
