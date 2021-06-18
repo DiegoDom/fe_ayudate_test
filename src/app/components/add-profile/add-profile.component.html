@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row p-4">
+        <div class="col-12 main-title">
+            <h5>{{ title }} perfil</h5>
+            <a (click)="location.back()" class="float-right">
+                <button type="button" class="btn btn-regresar"><i class="fa fa-arrow-left"></i> Regresar</button>
+            </a>
+
+        </div>
+        <div class="col-12">
+            <form [formGroup]="form" autocomplete="off" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-12 mt-2">
+                        <label>Nombre *</label>
+                        <input class="form-control" placeholder="Ingresa el nombre del usuario" name="name" formControlName="name" #name>
+                        <small *ngIf="nameInvalid" class="text-danger font-14">Ingrese un nombre.</small>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <label>Descripción</label>
+                        <textarea class="form-control" name="description" id="description" rows="4" formControlName="description" placeholder="Ingrese la descripción del perfil"></textarea>
+                        <small *ngIf="descInvalid" class="text-danger font-14">Ingrese máximo 254 carácteres.</small>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <button class="btn btn-primary float-right" type="submit" [disabled]="form.invalid">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-loader *ngIf="loading"></app-loader>

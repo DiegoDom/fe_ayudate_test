@@ -1,0 +1,25 @@
+.authcontainer {
+    align-items: center;
+    background: white;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.registerbox {
+    border: 1px solid rgba(0, 0, 0, .6);
+    border-radius: 3px;
+    padding: 50px;
+    width: 50%;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: grey;
+    text-align: center;
+}

@@ -1,27 +1,28 @@
-# LoginApp
+# Test CRUD Diego Domínguez
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
+## Instrucciones
 
-## Development server
+1.- Clonar el repositorio y correr
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    npm install
 
-## Code scaffolding
+2.- Correr el proyecto
+    
+    ng serve
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3.- Navegar al 
 
-## Build
+    http://localhost:4200/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+4.- El backend se encuentra en [be_ayudate_test](https://github.com/DiegoDom/be_ayudate_test)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+5.- El usuario es 
+    
+    email: admin@admin.com  password: admin1234
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Muchas gracias!
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Diego Alberto Domínguez

@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row p-4">
+        <div class="col-12 main-title">
+            <h5>{{ title }} usuario</h5>
+            <a [routerLink]="['/']" class="float-right">
+                <button type="button" class="btn btn-regresar"><i class="fa fa-arrow-left"></i> Regresar</button>
+            </a>
+
+        </div>
+        <div class="col-12 mt-3">
+            <a [routerLink]="['/profile/add']" class="float-right">
+                <button type="button" class="btn btn-primary btn-sm">Agregar perfil <i class="fas fa-plus"></i></button>
+            </a>
+        </div>
+        <div class="col-12">
+            <form [formGroup]="form" autocomplete="off" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-12 mt-2">
+                        <label>Nombre *</label>
+                        <input class="form-control" placeholder="Ingresa el nombre del usuario" name="name" formControlName="name" #name>
+                        <small *ngIf="nameInvalid" class="text-danger font-14">Ingrese un nombre.</small>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <label>Perfil *</label>
+                        <select id="profile_id" name="pertenece" class="form-control" formControlName="profile_id" style="cursor: pointer;">
+                          <option *ngFor="let profile of profiles; let i = index" value="{{profile['id']}}">{{profile['name']}}</option>
+                        </select>
+                        <small *ngIf="profileInvalid" class="text-danger font-14">Selecciona un perfil de usuario.</small>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <label>Email *</label>
+                        <input class="form-control" placeholder="Ingrese el email" name="email" formControlName="email">
+                        <small *ngIf="emailInvalid" class="text-danger font-14">Ingrese un email valido.</small>
+                    </div>
+                    <div class="col-12 mt-2" *ngIf="!id">
+                        <label for="password">Contraseña *</label>
+                        <input id="password" class="form-control" type="password" name="password" formControlName="password">
+                        <small *ngIf="passwordInvalid" class="text-danger font-14">Ingrese su contraseña (minimo 8 carácteres).</small>
+                    </div>
+                    <div class="col-12 mt-2" *ngIf="!id">
+                        <label for="passwordC">Confirmar contraseña *</label>
+                        <input id="passwordC" class="form-control" type="password" name="password2" formControlName="password2">
+                        <small *ngIf="password2Invalid" class="text-danger font-14">Confirme su contraseña (minimo 8 carácteres).</small>
+                        <small *ngIf="passwordsInvalids" class="text-danger font-14">Las contraseñas no coinciden</small>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <label>Teléfono</label>
+                        <input class="form-control" placeholder="Ingrese el telefono" name="phone" formControlName="phone">
+                    </div>
+                    <div class="col-12 mt-4">
+                        <button class="btn btn-primary float-right" type="submit" [disabled]="form.invalid">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-loader *ngIf="loading"></app-loader>

@@ -1,0 +1,22 @@
+<div class="container authcontainer">
+    <div class="card w-50">
+        <div class="card-body">
+            <p class="title">Iniciar sesión</p>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+                <div class="form-group">
+                    <label for="email">Correo *</label>
+                    <input id="email" class="form-control" type="email" name="email" formControlName="email" email>
+                    <small *ngIf="emailInvalid" class="text-danger font-14">Ingrese su email.</small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña *</label>
+                    <input id="password" class="form-control" type="password" name="password" formControlName="password">
+                    <small *ngIf="passwordInvalid" class="text-danger font-14">Ingrese su contraseña (minimo 8 carácteres).</small>
+                </div>
+                <button class="btn btn-block btn-primary" type="submit" [disabled]="form.invalid">Iniciar sesión</button>
+                <a class="mt-2 float-right" [routerLink]="['/register']">¿No tiene una cuenta? Regístrate</a>
+            </form>
+        </div>
+    </div>
+</div>
+<app-loader *ngIf="loading"></app-loader>
